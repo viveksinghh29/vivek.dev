@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
 
       {/* Links — desktop: justify-between in one row / mobile: 2x2 grid */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8"></div>
         {/* Desktop — single row */}
         <div className="hidden md:flex items-center justify-between">
           {links.map((link) => (
@@ -53,22 +53,39 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Mobile — 2×2 grid matching desktop spacing feel */}
-        <div className="grid grid-cols-2 gap-x-4 gap-y-5 md:hidden">
-          {links.map((link) => (
-            <motion.a
-              whileHover={{ y: -2 }}
-              key={link.title}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl font-black tracking-tight text-white hover:text-sky-300 transition whitespace-nowrap"
-            >
-              {link.title}
-            </motion.a>
-          ))}
-        </div>
-      </div>
+        {/* Mobile — left col: INSTAGRAM + GITHUB / right col: EMAIL + LINKEDIN right-aligned */}
+<div className="grid grid-cols-2 gap-y-5 md:hidden">
+  {/* Left column */}
+  <div className="flex flex-col gap-5">
+    {[links[0], links[2]].map(link => (
+      <motion.a
+        whileHover={{ y: -2 }}
+        key={link.title}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xl font-black tracking-tight text-white hover:text-sky-300 transition whitespace-nowrap"
+      >
+        {link.title}
+      </motion.a>
+    ))}
+  </div>
+  {/* Right column — text right aligned */}
+  <div className="flex flex-col gap-5 items-end">
+    {[links[1], links[3]].map(link => (
+      <motion.a
+        whileHover={{ y: -2 }}
+        key={link.title}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xl font-black tracking-tight text-white hover:text-sky-300 transition whitespace-nowrap"
+      >
+        {link.title}
+      </motion.a>
+    ))}
+  </div>
+</div>
 
       {/* Marquee — smaller text on mobile */}
       <div className="relative overflow-hidden pb-3">
