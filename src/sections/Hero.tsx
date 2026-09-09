@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Download } from 'lucide-react'
 import WordsPullUp from '../components/WordsPullUp'
 
 const ease = [0.16, 1, 0.3, 1] as const

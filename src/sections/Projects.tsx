@@ -13,7 +13,6 @@ import {
   Database,
   Code2,
   ShoppingCart,
-  Github,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
